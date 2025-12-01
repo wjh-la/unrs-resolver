@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: taiki-e/checkout-action@b13d20b7cda4e2f325ef19895128f7ff735c0b3d # v1.3.1
 
-      - uses: oxc-project/setup-rust@cd82e1efec7fef815e2c23d296756f31c7cdc03d # v1.0.0
+      - uses: oxc-project/setup-rust@ecabb7322a2ba5aeedb3612d2a40b86a85cee235 # v1.0.11
         with:
           cache-key: benchmark
           save-cache: ${{ github.ref_name == 'main' }}
@@ -41,7 +41,7 @@ jobs:
         env:
           RUSTFLAGS: "-C debuginfo=1 -C strip=none"
 
-      - uses: CodSpeedHQ/action@c28fe9fbe7d57a3da1b7834ae3761c1d8217612d # v3.7.0
+      - uses: CodSpeedHQ/action@346a2d8a8d9d38909abd0bc3d23f773110f076ad # v4.4.1
         timeout-minutes: 30
         with:
           run: cargo codspeed run
